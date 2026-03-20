@@ -1,0 +1,44 @@
+{
+  "name": "website-automation-playwright",
+  "version": "1.0.0",
+  "description": "[![Node.js](https://img.shields.io/badge/Node.js-18+-brightgreen)](https://nodejs.org/)\r [![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue)](https://www.typescriptlang.org/)\r [![Playwright](https://img.shields.io/badge/Playwright-1.42+-blue)](https://playwright.dev/)\r [![Build Status](https://img.shields.io/github/actions/workflow/status/yourusername/playwright-automation/ci.yml?branch=main)](https://github.com/yourusername/playwright-automation/actions)",
+  "main": "index.js",
+  "scripts": {
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test  --debug",
+    "test:ui": "npx playwright test --ui",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "test:mobile": "npx playwright test --project='Mobile Chrome' --project='Mobile Safari'",
+    "install:browsers": "npx playwright install",
+    "codegen": "npx playwright codegen",
+    "trace": "npx playwright show-trace",
+    "report": "npx playwright show-report",
+    "test::uat-chrome": "cross-env SECRET_KEY=test npx playwright test --project=chromium --grep @UAT",
+    "test::visual-chrome": "cross-env SECRET_KEY=test npx playwright test --project=chromium --update-snapshots --grep @Visual",
+    "test::-ui if": "npx playwright test --last-failed",
+    "test::api": "cross-env SECRET_KEY=test npx playwright test --project=apiTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasnia000743/Website-Automation-Playwright.git"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.7",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^24.8.1",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.3",
+    "playwright": "^1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "csv-parser": "^3.2.0",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                 // Modern JS target
+    "lib": ["ES2020"],                  // Include ES2020 features
+    "module": "commonjs",               // Node-compatible modules
+    "moduleResolution": "node",
+    "strict": true,                     // Enable strict type checks
+    "esModuleInterop": true,            // For commonjs interop
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,          // Needed to import JSON files
+    "declaration": true,                // Generates .d.ts files if needed
+    "outDir": "./dist",                 // Compiled JS goes here
+    "rootDir": ".",                      // Include all files in project
+    "baseUrl": ".",                     
+    "paths": {
+      "@/*": ["src/*"],
+      "@pages/*": ["src/pages/*"],
+      "@data/*": ["src/data/*"],
+      "@utils/*": ["src/utils/*"],
+      "@config/*": ["src/config/*"]
+    }
+  },
+  "include": [
+    "src/**/*",      // All TypeScript source code
+    "tests/**/*",    // Playwright tests
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test-results",
+    "screenshots"
+  ]
+}

@@ -1,0 +1,6 @@
+username,email,password,firstName,lastName,role
+john_doe,john.doe@example.com,password123,John,Doe,admin
+jane_smith,jane.smith@example.com,password456,Jane,Smith,user
+bob_wilson,bob.wilson@example.com,password789,Bob,Wilson,user
+alice_brown,alice.brown@example.com,password101,Alice,Brown,moderator
+charlie_davis,charlie.davis@example.com,password202,Charlie,Davis,user

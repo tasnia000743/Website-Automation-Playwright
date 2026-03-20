@@ -1,0 +1,32 @@
+[
+  {
+    "testId": "TC_EXCEL_001",
+    "testName": "Excel Test Case 1",
+    "description": "This is a test case stored in Excel format",
+    "priority": "high",
+    "status": "active",
+    "assignedTo": "QA Team",
+    "createdDate": "2024-01-15",
+    "lastModified": "2024-01-20"
+  },
+  {
+    "testId": "TC_EXCEL_002",
+    "testName": "Excel Test Case 2",
+    "description": "Another test case for Excel data reading",
+    "priority": "medium",
+    "status": "active",
+    "assignedTo": "QA Team",
+    "createdDate": "2024-01-16",
+    "lastModified": "2024-01-21"
+  },
+  {
+    "testId": "TC_EXCEL_003",
+    "testName": "Excel Test Case 3",
+    "description": "Third test case demonstrating Excel integration",
+    "priority": "low",
+    "status": "draft",
+    "assignedTo": "QA Team",
+    "createdDate": "2024-01-17",
+    "lastModified": "2024-01-22"
+  }
+]

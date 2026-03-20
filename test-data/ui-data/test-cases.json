@@ -1,0 +1,50 @@
+[
+  {
+    "testId": "TC001",
+    "testName": "Login with valid credentials",
+    "description": "Verify user can login with valid username and password",
+    "priority": "high",
+    "tags": ["login", "smoke"],
+    "data": {
+      "username": "john_doe",
+      "password": "password123",
+      "expectedUrl": "/dashboard"
+    }
+  },
+  {
+    "testId": "TC002",
+    "testName": "Login with invalid credentials",
+    "description": "Verify user cannot login with invalid credentials",
+    "priority": "medium",
+    "tags": ["login", "negative"],
+    "data": {
+      "username": "invalid_user",
+      "password": "wrong_password",
+      "expectedError": "Invalid credentials"
+    }
+  },
+  {
+    "testId": "TC003",
+    "testName": "Search functionality",
+    "description": "Verify search returns correct results",
+    "priority": "high",
+    "tags": ["search", "smoke"],
+    "data": {
+      "searchTerm": "playwright",
+      "expectedResults": 5,
+      "category": "documentation"
+    }
+  },
+  {
+    "testId": "TC004",
+    "testName": "Form validation",
+    "description": "Verify form validation works correctly",
+    "priority": "medium",
+    "tags": ["form", "validation"],
+    "data": {
+      "requiredFields": ["name", "email"],
+      "invalidEmail": "invalid-email",
+      "expectedValidationMessage": "Please enter a valid email"
+    }
+  }
+]

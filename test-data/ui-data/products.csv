@@ -1,0 +1,11 @@
+name,price,description,category,inStock
+Playwright Test Tool,0,End-to-end testing framework,Testing Tools,true
+Selenium WebDriver,0,Web automation framework,Testing Tools,true
+Cypress Testing,0,Modern testing framework,Testing Tools,true
+Jest Framework,0,JavaScript testing framework,Testing Tools,true
+Mocha Testing,0,JavaScript test framework,Testing Tools,true
+Node.js Runtime,0,JavaScript runtime environment,Development Tools,true
+TypeScript Compiler,0,JavaScript superset,Development Tools,true
+Visual Studio Code,0,Code editor,Development Tools,true
+Git Version Control,0,Version control system,Development Tools,true
+Docker Container,0,Containerization platform,DevOps Tools,true

@@ -1,0 +1,7 @@
+testId,testName,description,priority,status,assignedTo,createdDate,lastModified
+TC_EXCEL_001,Excel Test Case 1,This is a test case stored in Excel format,high,active,QA Team,2024-01-15,2024-01-20
+TC_EXCEL_002,Excel Test Case 2,Another test case for Excel data reading,medium,active,QA Team,2024-01-16,2024-01-21
+TC_EXCEL_003,Excel Test Case 3,Third test case demonstrating Excel integration,low,draft,QA Team,2024-01-17,2024-01-22
+
+
+
