@@ -22,15 +22,13 @@ test.describe("Login Module Tests", ()=> {
 
   test("Login01-Verify login to Application with valid credentials",
     {tag: ['@UI', '@UAT']}, async ({login, common, dashboard, goToLoginURL})=> {
-  const username = common.getDecryptedData(String(process.env.USER_NAME));
-  const password = common.getDecryptedData(String(process.env.PASSWORD));
-      await login.loginToApp(username, password);
+        await login.loginToApp(process.env.USER_NAME!, process.env.PASSWORD!);
       await dashboard.validateDashboardURL();
       
   });
 
   test.skip("Login02-Verify login to Application with invalid password", {tag: ['@UI', '@UAT']}, async ({login, page, goToLoginURL, common})=> {
-    const validUser = common.getDecryptedData(process.env.USER_NAME!);
+    const validUser = process.env.USER_NAME!;
     const jsonData= await DataReaderFactory.readData("./test-data/ui-data/login-module-data.json");
       await login.loginToApp(validUser,jsonData[0].wrong_password);
       await login.validateInavlidCredsErrorPopup(jsonData[0].invalid_credentialstext);
@@ -39,7 +37,7 @@ test.describe("Login Module Tests", ()=> {
   });
 
   test.skip("Login03-Verify login to Application with invalid username", async ({login, page, goToLoginURL, common})=> {
-    const validPass = common.getDecryptedData(process.env.PASSWORD!);
+    const validPass = process.env.PASSWORD!;
     const jsonData= await DataReaderFactory.readData("./test-data/ui-data/login-module-data.json");
       await login.loginToApp(jsonData[0].wrong_username, validPass);
       await login.validateInavlidCredsErrorPopup(jsonData[0].invalid_credentialstext);
@@ -64,9 +62,7 @@ test.describe("Login Module Tests", ()=> {
 
    test("Login06- Verify that on the dashboard, after the login the logo is properly visible",
     {tag: '@Visual'}, async ({login, common, dashboard, goToLoginURL, leftNavigationPage})=> {
-  const username = common.getDecryptedData(String(process.env.USER_NAME));
-  const password = common.getDecryptedData(String(process.env.PASSWORD));
-      await login.loginToApp(username, password);
+      await login.loginToApp(process.env.USER_NAME!, process.env.PASSWORD!);
       await dashboard.validateDashboardURL();
       await leftNavigationPage.validateScreenshotOfLogo('orangehrmlogo.png');
 

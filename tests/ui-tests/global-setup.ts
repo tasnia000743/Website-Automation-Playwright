@@ -12,17 +12,12 @@ export default async function globalSetup() {
   const login = new LoginPage(page);
   const dashboard= new DashboardPage(page);
   const util= new CommonUtils();
-  const decryptedUser= util.getDecryptedData(process.env.USER_NAME!);
-  const decryptedPass= util.getDecryptedData(process.env.PASSWORD!);
 
-   console.log("en username: ", String(process.env.USER_NAME));
+  console.log("en username: ", String(process.env.USER_NAME));
   console.log("en password: ", String(process.env.PASSWORD));
 
-  console.log("Decrypted username: ", decryptedUser);
-  console.log("Decrypted password: ", decryptedPass);
-
   await login.navigateToLoginPage();
-  await login.loginToApp(decryptedUser, decryptedPass);
+  await login.loginToApp(process.env.USER_NAME!, process.env.PASSWORD!);
 
   // Wait for successful login and dashboard navigation
   await dashboard.waitForDashboardURL();
