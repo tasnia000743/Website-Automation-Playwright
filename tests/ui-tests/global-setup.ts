@@ -2,6 +2,7 @@ import { chromium, BrowserContext } from "@playwright/test";
 import { LoginPage } from "@/pages/LoginPage";
 import { CommonUtils } from "@/utils/CommonUtils";
 import { DashboardPage } from "@/pages/DashboardPage";
+import crypto from "crypto";
 
 export default async function globalSetup() {
 
@@ -13,8 +14,18 @@ export default async function globalSetup() {
   const dashboard= new DashboardPage(page);
   const util= new CommonUtils();
 
-  console.log("en username: ", String(process.env.USER_NAME));
-  console.log("en password: ", String(process.env.PASSWORD));
+const user = crypto
+  .createHash("sha256")
+  .update(process.env.USER_NAME!)
+  .digest("hex");
+
+  const pass = crypto
+  .createHash("sha256")
+  .update(process.env.PASSWORD!)
+  .digest("hex");
+
+  console.log("en username: ", user);
+  console.log("en password: ", pass);
 
   await login.navigateToLoginPage();
   await login.loginToApp(process.env.USER_NAME!, process.env.PASSWORD!);
