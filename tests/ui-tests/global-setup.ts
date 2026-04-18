@@ -14,6 +14,8 @@ export default async function globalSetup() {
   const util= new CommonUtils();
   const decryptedUser= util.getDecryptedData(process.env.USER_NAME!);
   const decryptedPass= util.getDecryptedData(process.env.PASSWORD!);
+  console.log("Decrypted username: ", decryptedUser);
+  console.log("Decrypted password: ", decryptedPass);
 
   await login.navigateToLoginPage();
   await login.loginToApp(decryptedUser, decryptedPass);
